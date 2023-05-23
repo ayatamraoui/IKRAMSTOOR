@@ -1,0 +1,75 @@
+{% extends "all/main.html" %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<body>
+    <script></script>
+ <style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+      }
+      
+      h1 {
+        font-size: 36px;
+        margin-top: 0;
+      }
+      
+      h2 {
+        font-size: 24px;
+        margin-top: 30px;
+      }
+      
+      .team-member {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 20px;
+      }
+      
+      .team-member img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+      
+      .team-member p {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+ </style>
+ <div class="container">
+    <h1>About Us</h1>
+    <p>Welcome to Your E-commerce Website Name. We are dedicated to providing the best online shopping experience for our customers. Our mission is to offer high-quality products at affordable prices and exceptional customer service.</p>
+    <h2>Our Team</h2>
+    <div class="team-member">
+      <img src="{% static 'img/6840478.png' %}" alt="John Doe">
+      <p>John Doe<br>Founder & CEO</p>
+    </div>
+    <div class="team-member">
+      <img src="{% static 'img/6840478.png' %}" alt="Jane Doe">
+      <p>Jane Doe<br>Marketing Manager</p>
+    </div>
+    <div class="team-member">
+        <img src="{% static 'img/6840478.png' %}" alt="Jane Doe">
+        <p>Jane Doe<br>Marketing Manager</p>
+    </div>
+    <div class="team-member">
+        <img src="{% static 'img/6840478.png' %}" alt="Jane Doe">
+        <p>Jane Doe<br>Marketing Manager</p>
+    </div>
+    <div class="team-member">
+        <img src="{% static 'img/6840478.png' %}" alt="Jane Doe">
+        <p>Jane Doe<br>Marketing Manager</p>
+      </div>
+      <div class="team-member">
+        <img src="{% static 'img/6840478.png' %}" alt="Jane Doe">
+        <p>Jane Doe<br>Marketing Manager</p>
+      </div>
+  </div>
+</body>
+</html>
+{% endblock  %}

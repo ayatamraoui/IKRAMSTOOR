@@ -1,0 +1,71 @@
+
+<br>
+<br>
+<div class="container pb-5">
+ 
+    <form action="" method="POST"  enctype="multipart/form-data">
+      <h2 class="animation a1">Update Yours Status Order Here</h2>
+        {% csrf_token %}
+        {{form.status.label}}
+        {{form.status}}
+        
+        <button type="submit"  style="  background: linear-gradient(to right, #ffd333 0%,#6c757d 100%); " class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<style>
+
+  .animation {
+    animation-name: move;
+    animation-duration: .4s;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    
+  }
+  
+  .a1 {
+    animation-delay: 2s;
+ 
+    
+  }
+  
+  
+  .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+form {
+  margin-top: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #286090;
+}
+
+button[type="submit"]:focus {
+  outline: none;
+}
+
+</style>
+

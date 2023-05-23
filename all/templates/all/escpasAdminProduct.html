@@ -1,0 +1,189 @@
+{% extends "all/mainDashbord.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+       
+
+      <div class="sales-boxes">
+        <div class="recent-sales box" style="width: 1168px;">
+          <div class="title">Products</div>
+          <div class="sales-details" >
+            <ul class="details">
+              {% comment %} <li class="topic">Products</li>
+              <p>Sort Table Rows by Clicking on the Table Headers - Ascending and Descending (jQuery)</p> {% endcomment %}
+<div class="container">
+	
+	<div class="table" style="margin-bottom: 734px">
+		<div class="table-header" style="width:1000px">
+			<div class="header__item"><a id="name" class="filter__link" href="#">Product Name</a></div>
+			<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Price Per Unit</a></div>
+			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Basic Unit</a></div>
+			<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Description</a></div>
+			<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Name Cat</a></div>
+      <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Action</a></div>
+		</div>
+		<div class="table-content" style="width:1000px">	
+      {% for item  in products %}
+			<div class="table-row">		
+        
+				<div class="table-data" style="width:10px">{{item.name}}</div>
+				<div class="table-data"style="width:150px">{{item.price_per_unit}}</div>
+				<div class="table-data"style="width:150px">{{item.basic_unit}}</div>
+				<div class="table-data"style="width:150px">{{item.description}}</div>
+				<div class="table-data"style="width:150px">{{item.nameCat}}</div>
+        <div class="table-data"> <a href="{% url 'update_Product' item.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="text-danger" href="{% url 'delete_Product' item.id %}"><i class="fa-solid fa-trash"></i></a></div>
+        
+			</div>
+    
+      {% endfor %}
+		</div>	
+   
+	</div>
+</div>
+    {% comment %} </ul>
+          </div>
+          <div class="button">
+            <a href="#">See All</a>
+          </div>
+        </div>
+        <div class="top-sales box">
+          <div class="title">Top Seling Product</div>
+          {% for item  in products %}
+          <ul class="top-sales-details">
+            <li>
+               
+            <a href="#">
+              <!--<img src="images/sunglasses.jpg" alt="">-->
+              
+              <span class="product">{{item.name}}</span>
+            </a>
+        
+            <span class="price">{{item.price_per_unit}}DH</span>
+           
+          </li>
+          </ul>
+          {% endfor %} {% endcomment %}
+        </div>
+      </div>
+    </div>
+
+
+   
+  </section>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+$color-alpha: #212529;
+$color-form-highlight: #212529;
+
+*, *:before, *:after {
+	box-sizing:border-box;
+}
+
+body {
+	padding:$base-spacing-unit;
+	font-family:'Source Sans Pro', sans-serif;
+	margin:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin:0;
+}
+
+.container {
+	max-width: 1000px;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:100vh;
+}
+
+.table {
+	width:100%;
+	border:1px solid $color-form-highlight;
+}
+
+.table-header {
+  display: flex;
+  width: 100%;
+  background: #ffd333;
+  padding: ($half-spacing-unit * 1.5) 0;
+  /* color: black; */
+  width: 600px;
+}
+
+.table-row {
+	display:flex;
+	width:100%;
+	padding:($half-spacing-unit * 1.5) 0;
+	
+	&:nth-of-type(odd) {
+		background:$color-form-highlight;
+	}
+}
+
+.table-data, .header__item {
+	flex: 1 1 20%;
+	text-align:center;
+}
+
+.header__item {
+	text-transform:uppercase;
+}
+
+.filter__link:hover {
+  color:black;
+
+}
+
+a {
+  color:black;
+
+}
+
+a:hover{
+  color:#ffd333;
+
+}
+
+.filter__link {
+	color:white;
+	text-decoration: none;
+	position:relative;
+	display:inline-block;
+	padding-left:$base-spacing-unit;
+	padding-right:$base-spacing-unit;
+	
+	&::after {
+		content:'';
+		position:absolute;
+		right:-($half-spacing-unit * 1.5);
+		color:white;
+		font-size:$half-spacing-unit;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	&.desc::after {
+		content: '(desc)';
+	}
+
+	&.asc::after {
+		content: '(asc)';
+	}
+	
+}
+  </style>
+
+  
+{% endblock  %}
